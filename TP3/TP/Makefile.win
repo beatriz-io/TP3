@@ -1,0 +1,52 @@
+# Project: TP
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Controller/FileIO.o Model/Cliente.o Model/Conta.o Model/Data.o Model/Move.o View/Interface.o src/main.o Model/Banco.o Controller/CheckData.o
+LINKOBJ  = Controller/FileIO.o Model/Cliente.o Model/Conta.o Model/Data.o Model/Move.o View/Interface.o src/main.o Model/Banco.o Controller/CheckData.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = TP.exe
+CXXFLAGS = $(CXXINCS) -g3 -std=c++11
+CFLAGS   = $(INCS) -g3 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Controller/FileIO.o: Controller/FileIO.cpp
+	$(CPP) -c Controller/FileIO.cpp -o Controller/FileIO.o $(CXXFLAGS)
+
+Model/Cliente.o: Model/Cliente.cpp
+	$(CPP) -c Model/Cliente.cpp -o Model/Cliente.o $(CXXFLAGS)
+
+Model/Conta.o: Model/Conta.cpp
+	$(CPP) -c Model/Conta.cpp -o Model/Conta.o $(CXXFLAGS)
+
+Model/Data.o: Model/Data.cpp
+	$(CPP) -c Model/Data.cpp -o Model/Data.o $(CXXFLAGS)
+
+Model/Move.o: Model/Move.cpp
+	$(CPP) -c Model/Move.cpp -o Model/Move.o $(CXXFLAGS)
+
+View/Interface.o: View/Interface.cpp
+	$(CPP) -c View/Interface.cpp -o View/Interface.o $(CXXFLAGS)
+
+src/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o src/main.o $(CXXFLAGS)
+
+Model/Banco.o: Model/Banco.cpp
+	$(CPP) -c Model/Banco.cpp -o Model/Banco.o $(CXXFLAGS)
+
+Controller/CheckData.o: Controller/CheckData.cpp
+	$(CPP) -c Controller/CheckData.cpp -o Controller/CheckData.o $(CXXFLAGS)

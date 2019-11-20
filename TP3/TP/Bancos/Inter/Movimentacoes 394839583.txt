@@ -1,0 +1,2 @@
+5/10/2019;Deposito;C;100000
+5/10/2019;ransferencia para a conta: ;D;3000

@@ -1,0 +1,3 @@
+5/10/2019;Deposito;C;100000
+5/10/2019;Saque;D;200
+5/10/2019;Transferencia da conta: ;C;3000
